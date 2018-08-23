@@ -1,0 +1,25 @@
+{%extends 'club_c/base.html'%}
+
+{% block content %}
+
+<div id="Wrapper">
+    <div class="content">
+            <form method="post" action="{% url 'main:creartical_handler' %}" >
+                {% csrf_token %}
+            <div class="sep10"></div>
+            请输入主题：<input style="width:800px" name="title">
+            <div class="sep10"></div>
+            <textarea style="width:1000px;height:750px" name="content"></textarea>
+            <div class="sep10"></div>
+            <select name="in_palte">
+                <option value = "2">明星</option>
+                <option value = "1">生活</option>
+                <option value = "3">娱乐</option>
+                <option value = "5">军事</option>
+            </select>
+            <input type="submit" value="提交">
+        </form>
+    </div>
+
+</div>
+{% endblock content%}

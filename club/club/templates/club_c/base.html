@@ -1,0 +1,168 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0024)http://www.python88.com/ -->
+<html lang="zh-CN"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="Content-Type" content="text/html;charset=utf-8">
+    <meta name="theme-color" content="#333344">
+    <meta name="description" content="">
+    <meta name="baidu_union_verify" content="732f74a7f8c2735a006959e8b4a1eb99">
+
+    <title>ClearnClub</title>
+
+    <link rel="stylesheet" type="text/css" media="screen" href="/static/index_files/basic.css">
+<link rel="stylesheet" type="text/css" media="screen" href="/static/index_files/style.css">
+<link rel="stylesheet" type="text/css" media="screen" href="/static/index_files/desktop.css">
+<link rel="stylesheet" type="text/css" media="screen" href="/static/index_files/tomorrow.css">
+<link rel="stylesheet" type="text/css" href="/static/index_files/font-awesome.min.css">
+<link href="/static/index_files/jquery.textcomplete.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="/static/index_files/select2.css">
+<link href="/static/index_files/selectboxit.css" rel="stylesheet">
+<link href="/static/index_files/base.css" rel="stylesheet">
+<link href="/static/index_files/header.css" rel="stylesheet">
+<meta name="baidu_union_verify" content="71024be38a3851eecb5cdf2c23449553">
+<!-- 请置于所有广告位代码之前 -->
+<script src="/static/index_files/push.js"></script><script src="/static/index_files/hm.js"></script><script src="/static/index_files/f(6).txt"></script><script src="/static/index_files/ca-pub-1837452791782084.js"></script><script src="/static/index_files/ds.js"></script>
+
+
+    <link href="/static/index_files/index.css" rel="stylesheet">
+
+<link rel="preload" href="/static/index_files/f(7).txt" as="script"><script type="text/javascript" src="/static/index_files/f(7).txt"></script></head>
+
+<body style=""><div id="BAIDU_DUP_fp_wrapper" style="position: absolute; left: -1px; bottom: -1px; z-index: 0; width: 0px; height: 0px; overflow: hidden; visibility: hidden; display: none;"><iframe id="BAIDU_DUP_fp_iframe" src="/static/index_files/o.html" style="width: 0px; height: 0px; visibility: hidden; display: none;"></iframe></div>
+
+<div id="Top">
+    <div class="content">
+        <div style="padding-top: 6px;margin-right: 35px">
+            <table cellpadding="0" cellspacing="0" border="0" width="100%" class="header_block">
+                <tbody><tr>
+
+                    <td width="110" align="left">
+                        <a href="{% url 'main:showp'%}?palte=0&sort=1  " name="top" title="way to explore">
+                            LearnClub
+                        </a>
+                    </td>
+
+                    <td width="400" class="" align="left">
+                        <div style="margin-left:20px;font-size:18px">
+                            <a  class="nav-item index" style="color:blue;padding-right:30px" href="{% url 'main:showp'%}?palte=0&sort=1">全部</a>
+                            {% for palte in palte_list%}
+
+                                     <a class="nav-item index" style=";padding-right:30px" href="{% url 'main:showp'%}?palte={{palte.id}}&sort=1 ">{{palte.name}}</a>
+
+                            {% endfor %}
+
+                        </div>
+                    </td>
+
+                    <td width="auto" align="right " style="float:right;margin-top:3px">
+                        <div id="Search">
+                            <form action="http://www.python88.com/search" onsubmit="return dispatch()">
+                                <div style="width: 256px; height: 28px; background-size: 256px 28px;
+                                    background-image: url(&#39;/static/img/qbar_light@2x.png&#39;);
+                                    background-repeat: no-repeat; display: inline-block;">
+                                    <input type="text" maxlength="40" name="keyword" id="q" value="">
+                                    <input type="hidden" maxlength="40" name="search_type" id="search_type" value="">
+                                </div>
+                            </form>
+                        </div>
+                    </td>
+
+
+
+                    <td width="150" class="nav-action-box" align="right" style="padding-top: 2px;">
+                            {% if user.is_authenticated %}
+
+                            <a href="#" class="top">{{ user.username }}</a>&nbsp;&nbsp;&nbsp;
+                            <a href="{%url 'main:logout'%}" class="top">退出</a>
+                             {% else %}
+                            <a href="{% url 'main:register' %}?next={{request.get_full_path}}" class="top">注册</a>&nbsp;&nbsp;&nbsp;
+                            <a href="{% url 'main:login_page' %}?next={{request.get_full_path}}" class="top">登录</a>
+                            {% endif %}
+                        </td>
+
+
+                </tr>
+            </tbody></table>
+        </div>
+    </div>
+</div>
+
+
+{% block content%}
+
+{% endblock content%}
+
+ <div id="Bottom">
+    <div class="content footer">
+        <div class="inner">
+            <div class="sep10"></div>
+
+            <div class="fr">
+            </div>
+
+            <strong>
+                <a href="http://www.python88.com/about" class="dark" target="_self">关于</a>
+                &nbsp;
+
+            </strong>
+
+            <div class="sep20"></div>
+             用于自身练习，欢迎大家批评指正～
+
+            <div class="sep20"></div>
+            <span class="f12 gray">
+                <a href="http://www.miibeian.gov.cn/" target="_blank" rel="nofollow">京IPC备案号000000001</a></span>
+            <div class="sep10"></div>
+        </div>
+    </div>
+</div>
+
+
+
+
+    <script type="text/javascript" src="/static/login_files/highlight.pack.js"></script>
+<script type="text/javascript" src="/static/login_files/jquery-1.11.0.js"></script>
+<script type="text/javascript" src="/static/login_files/jquery-ui.js"></script>
+<script type="text/javascript" src="/static/login_files/jquery.autosize.js"></script>
+<script type="text/javascript" src="/static/login_files/lscache.min.js"></script>
+<script type="text/javascript" src="/static/login_files/select2.min.js"></script>
+<script type="text/javascript" src="/static/login_files/selectboxit.min.js"></script>
+<script src="/static/login_files/jquery.textcomplete.min.js" type="text/javascript"></script>
+
+<script type="text/javascript" src="/static/login_files/common.js"></script>
+<script type="text/javascript" src="/static/login_files/v2ex.js"></script>
+<script type="text/javascript" src="/static/login_files/base.js"></script>
+<script type="text/javascript" src="/static/js/jquery-1.12.4.min.js.js"></script>
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?ab7c822fcd4037bf0757e1fef7f75736";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+
+
+
+
+
+</body></html>

@@ -1,0 +1,49 @@
+{% extends 'club_c/base.html'%}
+
+{% block content%}
+
+
+  <form method="post" action="{% url 'main:auth_view' %}">
+       {% csrf_token %}
+        <input type="hidden" name="_xsrf" value="2|104bf96e|d8e5b3ed778b195d7e680adab6c59da0|1533806966">
+
+        <div class="left">
+            <h2>
+                <span>登录<a href="#">「Python中国社区」</a>帐号</span>
+            </h2>
+
+            <div class="nsb-block-content">
+                <div class="edit-unit">
+                    <span class="edit-name">账号</span>
+
+                    <div class="edit-body">
+                        <input type="text" value="" name="username" class="required" placeholder="">
+
+                    </div>
+                </div>
+                <div class="edit-unit">
+                    <span class="edit-name">密码</span>
+
+                    <div class="edit-body">
+                        <input type="password" value="" name="password" class="required" placeholder="">
+
+                    </div>
+                </div>
+            </div>
+            <div class="nsb-block-ctrl">
+                <div class="submit">
+                    <div class="nsb-policy">
+                        <input type="checkbox" id="nsb_policy" name="permanent" value="y" checked="">
+                        <label for="nsb_policy">一个月内免登录</label>
+                    </div>
+                    <button class="blue-btn submit-btn" type="submit">登录</button>
+                    <a class="pwd-lost" href="http://www.python88.com/account/password/find">忘记密码？</a>
+                </div>
+            </div>
+        </div>
+
+
+    </form>
+
+
+{% endblock content%}
