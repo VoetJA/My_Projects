@@ -96,6 +96,8 @@ def artical(request,artical_id):
     palte_list = palte.objects.all()
     artical = Articals.objects.get(id=artical_id)
     ap_id = artical.in_palte.id
+    artical.click_num += 1
+    artical.save()
     # url = request.get_all_path()
     content = {'palte_list': palte_list, 'artical': artical,'ap_id':ap_id}
     return render(request,'club_c/content.html',content)
