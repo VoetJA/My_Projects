@@ -1,0 +1,29 @@
+帖子 Articals：
+	#帖子主题
+	title
+	#帖子内容
+	content(textField)
+	#帖子发布时间
+	create_time
+	#作者
+	author=foreignkey（用户：clubUser）
+	#点击量
+	click_num
+	#所属板块
+	in_palte=foreignkey(板块：plate)
+
+用户 clubUser:
+	#用户
+	user=oneTooneField(user)
+	#签名
+	signature
+	#头像
+	head_photo
+
+板块palte:
+	#名称
+	name
+	
+	
+	
+	

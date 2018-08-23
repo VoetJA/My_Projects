@@ -1,0 +1,201 @@
+{% extends 'club_c/base.html'%}
+
+{% block content%}
+
+<div id="Wrapper">
+    <div class="content">
+
+        
+        
+
+        
+
+    <div id="Rightbar" style="">
+        <div class="sep10"></div>
+
+        
+
+    <div class="box">
+
+        <div style="padding: 5px;" class="cell">
+            <table width="100%" cellspacing="0" cellpadding="0" border="0">
+                <tbody>
+                <tr>
+                    <td width="32">
+                        <a href="http://www.python88.com/new">
+                            <img width="32" border="0" src="/static/content_files/flat_compose.png"></a>
+                    </td>
+                    <td width="10"></td>
+
+                    <td width="auto" valign="middle" align="left">
+                        <a class="blue-btn" style="font-size: 15px;width: 100px;line-height: 40px;height: 40px;" href="{%url 'main:creartical'%}">创作新主题</a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+
+
+        <div class="sep10"></div>
+
+        <div class="box">
+
+</div>
+        <div class="sep10"></div>
+
+        <div class="box">
+
+    <div class="cell">
+        <span class="">社区所有版块导航</span>
+    </div>
+
+        <div class="cell">
+
+
+            {% for palte in palte_list %}
+
+            <span class="green">{{palte.name}}</span>
+
+            {% endfor %}
+
+
+
+        </div>
+
+</div>
+        <div class="sep10"></div>
+
+
+
+        <div class="sep10"></div>
+
+        <div class="sep10"></div>
+    </div>
+
+
+
+        
+
+    <div id="Main">
+        <div class="sep10"></div>
+
+        <div style="border-bottom: 0px;" class="box">
+            <div class="header">
+                <div class="fr f12">
+                    <a href="http://www.python88.com/user/7601">
+                        
+                            <img border="0" align="default" class="avatar" src="/static/{{artical.author.photo}}" style="max-width: 64px; max-height: 64px;">
+                        
+                    </a>
+                </div>
+
+                <div class="fr " style="margin-right:10px">
+                    
+                        <a style="width: 50px;color: #fff;height: 30px;font-size: 14px;line-height: 30px" class=" green-btn" href="http://www.python88.com/attention/topic/22194/1">关注</a>
+                    
+                </div>
+
+                <a href="#">所属板块</a>
+                <span class="chevron">&nbsp;»&nbsp;</span>
+                <a href="{% url 'main:showp' %}?palte={{ap_id}}&sort=1">{{artical.in_palte}}</a>
+
+                <div class="sep10"></div>
+                <h1>
+                    
+                    
+                    
+                    
+                    {{artical.title}}</h1>
+
+
+                <small class="gray" style="font-size: 13px">
+                    <a href="http://www.python88.com/user/7601">审计之家</a>
+                    • 7 小时前
+                    • 9 次点击 &nbsp;
+                    
+                    
+                    
+                </small>
+            </div>
+        </div>
+
+        <div class="sep10"></div>
+
+        <div class="box">
+
+            <div class="inner">
+                <div class="topic_content markdown-body" style="overflow:hidden;max-width: 100%">
+
+
+
+
+    <div class="rich_media_content" id="js_content">
+        <p style="border-width: 0px;border-style: initial;border-color: initial;margin-top: 0.63em;margin-bottom: 1.8em;font-size: 16px;color: rgb(25, 25, 25);">
+            {{artical.content}}
+        </p>
+        <p style="border-width: 0px;border-style: initial;border-color: initial;margin-top: 0.63em;margin-bottom: 1.8em;font-size: 16px;color: rgb(25, 25, 25);"><span style="letter-spacing: 0.544px;text-align: justify;widows: 1;max-width: 100%;font-family: 微软雅黑;font-size: 14px;line-height: 24px;color: rgb(0, 176, 240);box-sizing: border-box !important;word-wrap: break-word !important;">版权<span style="max-width: 100%;font-family: 微软雅黑, sans-serif;box-sizing: border-box !important;word-wrap: break-word !important;">说明：</span></span><span style="letter-spacing: 0.544px;text-align: justify;widows: 1;max-width: 100%;color: rgb(63, 63, 63);font-size: 14px;line-height: 24px;font-family: 微软雅黑, sans-serif;box-sizing: border-box !important;word-wrap: break-word !important;">如涉版权问题，请与我们联系，谢谢！</span>
+     </div>
+
+
+    <br>
+    <div>
+        <br>本文地址：<a href="{{request.path}}">{{request.path}}</a>
+    </div>
+
+    <img alt="" width="1px" height="1px" class="" style="width:1px;height:1px;display:none" src="./content_files/DbQuMqBP43">
+
+
+                </div>
+
+                <div class="sep10"></div>
+
+
+            </div>
+
+            <div class="topic_buttons">
+                <div style="line-height: 12px; padding-top: 3px; text-shadow: 0px 1px 0px #fff;" class="fr gray f11">9 次点击 &nbsp;
+                </div>
+                <a class="tb" style="font-weight: 600" title="分享到新浪微博" alt="分享 新浪微博" href="javascript:void((function(s,d,e,r,l,p,t,z,c) {var%20f=&#39;http://v.t.sina.com.cn/share/share.php?appkey=&#39;,u=z||d.location,p=[&#39;&amp;url=&#39;,e(u),&#39;&amp; title=&#39;,e(t||d.title),&#39;&amp;source=&#39;,e(r),&#39;&amp;sourceUrl=&#39;,e(l),&#39;&amp; content=&#39;,c||&#39;gb2312&#39;,&#39;&amp;pic=&#39;,e(p||&#39;&#39;)].join(&#39;&#39;);function%20a() {if(!window.open([f,p].join(&#39;&#39;),&#39;mb&#39;, [&#39;toolbar=0,status=0,resizable=1,width=600,height=500,left=&#39;,(s.width- 600)/2,&#39;,top=&#39;,(s.height-600)/2].join(&#39;&#39;)))u.href=[f,p].join(&#39;&#39;);}; if(/Firefox/.test(navigator.userAgent))setTimeout(a,0);else%20a();}) (screen,document,encodeURIComponent,&#39;&#39;,&#39;&#39;,
+                            &#39;&#39;,
+                            &#39;{{artical.content}}&#39;,
+                            &#39;http://127.0.0.1:8000/artical/22/&#39;,&#39;utf-8&#39;));">分享到微博</a>
+            </div>
+        </div>
+
+        <div class="sep20" style="background-color: #e2e2e2;"></div>
+
+
+
+
+
+
+
+
+
+
+
+        <div class="sep20" style="background-color: #e2e2e2;"></div>
+
+
+
+            <div align="center" style="background-color: #e2e2e2;">
+
+            </div>
+
+
+
+    </div>
+
+
+
+    </div>
+
+    <div class="c"></div>
+    <div class="sep20"></div>
+</div>
+
+
+{% endblock content%}

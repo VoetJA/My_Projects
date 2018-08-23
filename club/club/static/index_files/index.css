@@ -1,0 +1,136 @@
+
+.welcome-left-aside {
+    top: 55px;
+    width: 112px;
+}
+
+.welcome-right-aside {
+    top: 45px;
+    width: 200px;
+}
+
+.aside-list {
+    list-style: none;
+    margin: 0;
+    padding-left: 0
+}
+
+.aside-list {
+    color: #909090
+}
+
+.aside-list > li {
+    margin: 0 0 .3em;
+    padding: .1em .1em;
+    cursor: pointer;
+    -webkit-transition: color .3s;
+    transition: color .3s
+}
+
+.aside-list > li.true {
+    font-weight: 700
+}
+
+.aside-list > li.true, .aside-list > li:active, .aside-list > li:hover {
+    color: #007fff;
+    background-color: hsla(0, 0%, 87%, .2);
+    border-radius: 2px
+}
+
+.aside-list li a {
+    width: 100%;
+    display: inline-block;
+}
+
+.aside-list > li.true a {
+    color: #007fff;
+}
+
+.aside-list > li:hover a {
+    color: #007fff;
+    text-decoration: none;
+}
+
+.aside-list > li.true .active, .aside-list > li:active .active, .aside-list > li:hover .active {
+    display: inline-block
+}
+
+.aside-list > li .active, .aside-list > li.true .inactive, .aside-list > li:active .inactive, .aside-list > li:hover .inactive {
+    display: none
+}
+
+.aside-list > li .inactive {
+    display: inline-block
+}
+
+.aside-list .icon {
+    background-size: 100% 100%;
+    width: 0.1em;
+    height: 1.5em;
+    top: .2em
+}
+
+.aside-list .icon, .aside-list span {
+    display: inline-block;
+    position: relative
+}
+
+.aside-list span {
+    top: -.2em
+}
+
+.aside-list-span {
+    margin-left: .9em
+}
+
+.wchannel-more {
+}
+
+.wchannel-more:hover .wchannel-more-layer {
+    display: block;
+}
+
+.wchannel-more-layer {
+    background-color: #fff;
+    bottom: 0;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.12);
+    left: 105px;
+    padding: 15px;
+    display: none;
+    position: absolute;
+    width: 120px;
+    z-index: 0
+}
+
+.wchannel-item {
+    border-radius: 4px;
+    margin: 5px;
+    text-align: center;
+    transition-property: color, background-color;
+}
+
+.wchannel-item span {
+    display: inline-block;
+    font-size: 16px;
+    color: #909090;
+}
+
+.wchannel-item span:hover {
+    animation-duration: 0.2s;
+    animation-iteration-count: 1;
+    animation-name: hvr-back-pulse;
+    animation-timing-function: linear;
+    color: #007fff;
+}
+
+.wchannel-item.true {
+    color: #007fff;
+}
+
+.wchannel-item.true span {
+    color: #007fff;
+}
+
+.home.true {
+    color: #007fff;
+}

@@ -1,0 +1,75 @@
+{% extends 'club_c/base.html'%}
+
+{% block content%}
+
+
+<div id="Wrapper">
+    <div class="content">
+
+    <div class="container" style="width:720px">
+
+        <section class="nsb-block edit register has-aside clearfix">
+            <form method="post" action="{% url 'main:register_handler' %}">
+                {% csrf_token %}
+                <input type="hidden" name="_xsrf" value="2|ea661f9a|22c855198da6ffa98445ec2e4ce87b54|1533806966">
+                <div class="left">
+                    <h2 style="">
+                        <span>注册<a href="#">Learnclub</a>帐号</span>
+                    </h2>
+
+                    <div class="nsb-block-content">
+                        <div class="edit-unit">
+                            <span class="edit-name">邮箱</span>
+
+                            <div class="edit-body">
+                                <input type="text" value="" name="username" class="required" placeholder="">
+                                
+
+                            </div>
+                        </div>
+                        <div class="edit-unit">
+                            <span class="edit-name">密码</span>
+
+                            <div class="edit-body">
+                                <input type="password" value="" name="password" class="required" placeholder="">
+                                
+                            </div>
+                        </div>
+
+                        
+                    </div>
+
+                    <div class="nsb-block-ctrl">
+                        <div class="submit" >
+                            <button onclick="return submitOnce(this);" class="green-btn submit-btn" type="submit">注册
+                            </button>
+                        </div>
+                        <div class="" style="margin-right: 80px;margin-top: 15px;">
+                            <div id="info_submit" class="text-info" style="display: none;">注册中，请稍后......<img src="/static/register_files/loading3.gif"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <aside class="right">
+                    <h3>已有帐号？</h3>
+                    <a href="http://www.python88.com/account/signin" class="green-btn reg_btn" style="color:#fff">立即登录</a>
+
+                    <h3>第三方帐号登录</h3>
+                    <a href="http://www.python88.com/account/signin/weibo" class="red-btn reg_btn">
+                        <img src="/static/register_files/weibo-white.svg" width="30px;" style="vertical-align:middle;margin-right: 5px">
+                        <span style="color:#fff">微博登录</span></a>
+                </aside>
+            </form>
+        </section>
+
+    </div>
+
+
+
+    </div>
+
+    <div class="c"></div>
+    <div class="sep20"></div>
+</div>
+
+{% endblock content%}

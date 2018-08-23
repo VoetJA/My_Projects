@@ -1,0 +1,90 @@
+#Top {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+#Wrapper {
+    background-color: #e2e2e2;
+    margin-top: 45px;
+}
+
+#LeftTwoColumn {
+    width: 130px;
+    float: left;
+    margin-left: 100px
+}
+
+#MainTwoColumn {
+    width: auto;
+    margin: 0px 100px 0px 270px;
+}
+
+#LeftThreeColumn {
+    width: 130px;
+    float: left;
+}
+
+#MainThreeColumn {
+    width: auto;
+    margin: 0px 232px 0px 127px;
+}
+
+#RightThreeColumn {
+    width: 200px;
+    float: right;
+    margin-right: 20px;
+}
+
+img.avatar {
+    border-radius: 2px;
+    margin-top: .1em;
+    height: 60px;
+}
+
+img.avatar_small {
+    border-radius: 2px;
+    margin-top: .3em;
+    height: 25px;
+}
+
+.cell .topic_image {
+    overflow: hidden;
+    width: 60px;
+}
+
+.pager {
+    line-height: 30px;
+    height: 30px;
+    text-align: center;
+    font-size: 0;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none
+}
+
+.pager a, .pager span {
+    display: inline-block;
+    font-size: 14px;
+    color: #6b7485;
+    background-color: #ecedf0;
+    margin: 0 5px;
+    padding: 0 8px;
+    min-width: 14px;
+    border-radius: 3px
+}
+
+.pager span {
+    color: #fff;
+    background-color: #9097a4
+}
+
+.pager a:hover {
+    background-color: #dee0e5
+}
+
+.error {
+    color: red;
+}
