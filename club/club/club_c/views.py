@@ -5,6 +5,16 @@ from models import *
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.decorators import login_required
+from django.views.decorators.cache import cache_page
+
+
+#主页
+# @cache_page(60*5)  这个装饰器可以缓存这个视图，传入参数是时间（秒）
+def index(request):
+    palte_list = palte.objects.all()
+    artical_list = Articals.objects.order_by('-id')
+    content = {'palte_list':palte_list,'artical_list':artical_list}
+    return render(request,'club_c/index.html',content)
 
 #转到登录页
 def login_page(request):
@@ -57,12 +67,6 @@ def showp(request):
     content = {'palte_id':palte_id,'palte_list':palte_list,'artical_list':artical_list,'sort':sort_id}
     return render(request,'club_c/showPage.html',content)
 
-#主页
-def index(request):
-    palte_list = palte.objects.all()
-    artical_list = Articals.objects.order_by('-id')
-    content = {'palte_list':palte_list,'artical_list':artical_list}
-    return render(request,'club_c/index.html',content)
 
 #创作新帖子，登录验证装饰器
 @login_required

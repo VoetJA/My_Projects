@@ -1,3 +1,4 @@
+{% load cache %}
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <!-- saved from url=(0024)http://www.python88.com/ -->
 <html lang="zh-CN"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -44,11 +45,13 @@
                     <td width="400" class="" align="left">
                         <div style="margin-left:20px;font-size:18px">
                             <a  class="nav-item index" style="color:blue;padding-right:30px" href="{% url 'main:showp'%}?palte=0&sort=1">全部</a>
+                            {% cache 300 palte%}
                             {% for palte in palte_list%}
 
                                      <a class="nav-item index" style=";padding-right:30px" href="{% url 'main:showp'%}?palte={{palte.id}}&sort=1 ">{{palte.name}}</a>
 
                             {% endfor %}
+                            {% endcache %}
 
                         </div>
                     </td>
