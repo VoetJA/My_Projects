@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="/static/js/jquery-1.12.4.min.js"></script>
+    <script>
+        $(function(){
+            $('#ch').click(function() {
+                <!--alert(123)-->
+                window.location.href = "/cap/";
+        });
+    });
+    </script>
+</head>
+<body>
+<form method="post" action="/jianyan/">
+    {% csrf_token %}
+    <input type="text" name="text">
+    <input type="submit">
+</form>
+<div>验证码图片：<img src="/captcha/"></div>
+<input type="button" value="看不清，换一张" id="ch">
+</body>
+</html>

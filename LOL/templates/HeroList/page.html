@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Page</title>
+</head>
+<body>
+<!--遍历英雄-->
+{% for hero in list%}
+<ul>
+<li>{{forloop.counter}}:{{hero.h_name}}</li>
+</ul>
+{%endfor%}
+
+<!--翻页效果-->
+{% for page in plist %}
+{% if page == pindex %}
+{{page}}
+{%else%}
+<a href="/{{page}}/">{{page}}</a>
+{%endif%}
+{%endfor%}
+</body>
+</html>

@@ -1,0 +1,18 @@
+{%load static from staticfiles%}
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>login</title>
+</head>
+<body>
+<form method="post" action="/login_handle/">{% csrf_token %}
+    <input type="text" name="uname" id="uname">
+    <input type="submit">
+</form>
+<hr>
+<img src="{%static 'HeroList/1.jpg'%}" width=750 alt="静态文件">
+</body>
+</html>
