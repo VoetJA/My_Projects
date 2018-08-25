@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+</head>
+<body>
+<h3>大大的首页！！！</h3>
+<br>
+<!--下面代码是反解析用法-->
+<a href="{%url 'main:detail'%}">去详情页面</a>
+<ul>
+    {%for hero in list%}
+<li>{{hero.h_name}}</li>
+{%endfor%}
+</ul>
+<br>
+<!--下面是状态保持，即登录/退出页面练习-->
+你好，{{uname}}
+<hr>
+<a href="{%url 'main:login'%}?next=123">登录</a>
+<hr>
+<a href="{%url 'main:login_out'%}">退出</a>
+<hr>
+<hr>
+<a href="/1/">点击就送屠龙宝刀</a>
+<hr>
+{{request.session.a}}
+<hr>
+<a href=""></a>
+</body>
+</html>
