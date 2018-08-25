@@ -2,10 +2,11 @@
 from django.shortcuts import render,redirect,HttpResponse
 from models import *
 # from django.contrib import auth
-from django.contrib.auth.models import User
+from django.contrib.auth.models import User  #django自带User系统
 from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.decorators import login_required
-from django.views.decorators.cache import cache_page
+from django.views.decorators.cache import cache_page  #redis缓存
+from django.db import transaction  #事务
 
 
 #主页
@@ -16,7 +17,9 @@ def index(request):
     content = {'palte_list':palte_list,'artical_list':artical_list}
     return render(request,'club_c/index.html',content)
 
-#转到登录页
+#登录页面
+# 如果是从用户认证转来，会在URL中携带一个next，用来保存用户登录前转向页面，如果登录成功，直接跳转到该页面
+#转向地址用session保存
 def login_page(request):
     nex_url = request.GET.get('next', '/')
     request.session['nex_url']=nex_url
@@ -76,25 +79,36 @@ def creartical(request):
     return render(request,'club_c/crartical.html',content)
 
 #提交帖子各类信息
+#事务的装饰器功能引用
+@transaction.atomic()
 def creartical_handler(request):
-    title = request.POST['title']
-    content = request.POST['content']
-    in_palte = request.POST['in_palte']
-    in_palte = palte.objects.get(pk=in_palte)
-    user = clubUser.objects.get(user = request.user)
-    print(user)
-    Articals.objects.create(
-        title=title,
-        # 帖子内容
-        content = content,
-        # 作者
-        author = user,
-        # 所属板块
-        in_palte = in_palte
-    )
+    tran_point = transaction.savepoint() #事务的保存点，如果后面出现错误，回滚到这一点
+    try:
+        #获取提交的文章题目，内容，所属板块
+        title = request.POST['title']
+        content = request.POST['content']
+        in_palte = request.POST['in_palte']  #获取select被选中的项的value值
+        in_palte = palte.objects.get(pk=in_palte)
+        #获得当前操作的用户
+        user = clubUser.objects.get(user = request.user)
+        # print(user)
+        Articals.objects.create(
+            title=title,
+            # 帖子内容
+            content = content,
+            # 作者
+            author = user,
+            # 所属板块
+            in_palte = in_palte
+        )
+        transaction.savepoint_commit(tran_point)
+    except Exception as e:
+        print e.message
+        transaction.savepoint_rollback(tran_point)
     return redirect('main:index')
 
 #浏览帖子内容页
+@cache_page(60)
 def artical(request,artical_id):
 
     palte_list = palte.objects.all()
