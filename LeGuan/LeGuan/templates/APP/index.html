@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Home</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">	
+<link href="/static/css/bootstrap.css" rel='stylesheet' type='text/css' />
+<link href="/static/css/style.css" rel='stylesheet' type='text/css' />
+<link href='https://fonts.googleapis.com/css?family=Raleway:400,100,200,300,500,600,700,800,900' rel='stylesheet' type='text/css'>
+<script type="text/javascript" src="/static/js/jquery-1.10.2.min.js"></script>
+<!---- start-smoth-scrolling---->
+<script type="text/javascript" src="/static/js/move-top.js"></script>
+<script type="text/javascript" src="/static/js/easing.js"></script>
+<script src="/static/js/jquery.min.js"></script>
+		<script type="text/javascript">
+			jQuery(document).ready(function($) {
+				$(".scroll").click(function(event){		
+					event.preventDefault();
+					$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+				});
+			});
+		</script>
+<!---- start-smoth-scrolling---->
+<!--start-top-nav-script-->
+		<script>
+			$(function() {
+				var pull 		= $('#pull');
+					menu 		= $('nav ul');
+					menuHeight	= menu.height();
+				$(pull).on('click', function(e) {
+					e.preventDefault();
+					menu.slideToggle();
+				});
+				$(window).resize(function(){
+	        		var w = $(window).width();
+	        		if(w > 320 && menu.is(':hidden')) {
+	        			menu.removeAttr('style');
+	        		}
+	    		});
+			});
+		</script>
+<!--End-top-nav-script-->
+<link rel="stylesheet" type="text/css" href="/static/css/demo.css" />
+<script type="text/javascript" src="/static/js/modernizr.custom.53451.js"></script>
+<!--js--> 
+<script src="/static/js/jquery.min.js"></script>
+<!--/js-->
+<!--gallery-->
+<script type="text/javascript" src="/static/js/modernizr.custom.53451.js"></script>
+<script type="text/javascript" src="/static/js/jquery.gallery.js"></script>
+<script type="text/javascript">
+		$(function() {
+		$('#dg-container').gallery({
+		autoplay	:	true
+	});
+});
+</script>
+<!--/gallery-->
+</head>
+<body>
+
+	<!--start-header-->
+			<div id="home" class="header">
+					<div class="top-header">
+						<div class="container">
+							<div class="logo">
+								<h2 style="color:grey"><b><i>涉县乐冠电子商务有限公司</i></b></h2>
+							</div>
+							<!--start-top-nav-->
+							 <nav class="top-nav">
+								<ul class="top-nav">
+									<li class="active"><a href="#home" class="scroll">主页</a></li>
+									<li><a href="#services" class="scroll">产品</a></li>
+									<li><a href="#portfolio" class="scroll">产品组合</a></li>
+									<li><a href="#about" class="scroll">关于</a></li>
+									<li><a href="#news" class="scroll">新闻</a></li>
+									<li><a href="#contact" class="scroll">联系我们</a></li>
+								</ul>
+								<a href="#" id="pull"><img src="/static/images/menu-icon.png" title="menu" /></a>
+							</nav>
+							<div class="clearfix"> </div>
+						</div>
+				</div>
+			</div>
+		<!--End-header-->
+		<div class="banner">
+				<div class="banner-mask">
+							<div class="container">
+								            	  <div class="banner-text">
+								            	  						<h1></h1>
+								            	  						<div class="button">
+								            	  							<a href="#services" style="border:0"></a>
+								            	  						</div>
+								            	  </div>
+							</div>
+				</div>
+		</div>
+		
+		<div class="services" id="services">
+							<div class="container">
+												<div class="services-main">
+																			{% for pro in pro_list %}
+																			<div class="col-md-3">
+																								<div class="services-main-left">
+																														<span class="left-one"> </span>
+																														<h3>WEB DESIGN</h3>
+																														<img src="/static/images/line.png" alt="">
+																														<p>{{pro.pro_name}}</p>
+																								</div>
+																			</div>
+																			{% endfor %}
+																			<div class="clearfix"> </div>
+												</div>
+							</div>
+		</div>
+		<!--Responsive-tabs-Starts-Here-->
+	<div class="responsive-tabs" id="project">
+		<div class="container">
+			<div class="tabs-box clock wow bounceIn">
+			<ul class="tabs-menu">
+				<li><a href="#tab1">START TOUR</a></li>
+				<li class="tab">
+					<div class="grid_info1">
+					<a href="#tab2">FOR ALL DEVICES</a>
+					</div>
+				</li>
+			</ul>
+			<div class="clearfix"> </div>
+			<div class="tab-grids">
+				<div id="tab1" class="tab-grid">
+					<div class="col-md-6 line1">
+						<img src="/static/images/phone1.png" alt="">
+					    </div>
+					 <div class="col-md-6 line2">   
+						<h3>Fully Responsive</h3>
+						<p class="para1">Eum cu tantas legere complectitur, hinc utamur ea eam. Lorem ipsum dolor sit amet, volumus temporibus definitionem id ius, vel ut magna timeam appareat, movet timeam maiorum an ius.</p>
+						<p class="para2">Sea libris dictas lucilius et. Ne cibo urbanitas pri, qui ad populo accusamus. Quod congue ea ius, nisl aperiri sit ut.</p>
+						<div class="bttn">
+							    <a href="#">START TOUR</a>
+						</div>
+					</div>
+                                <div class="clearfix"> </div>
+				</div>
+				<div id="tab2" class="tab-grid">
+					<div class="col-md-6 line1">
+						<img src="/static/images/iphone1.png" alt="">
+					    </div>
+					 <div class="col-md-6 line2">   
+						<h3>Fully Responsive</h3>
+						<p class="para1">Eum cu tantas legere complectitur, hinc utamur ea eam. Lorem ipsum dolor sit amet, volumus temporibus definitionem id ius, vel ut magna timeam appareat, movet timeam maiorum an ius.</p>
+						<p class="para2">Sea libris dictas lucilius et. Ne cibo urbanitas pri, qui ad populo accusamus. Quod congue ea ius, nisl aperiri sit ut.</p>
+						<div class="bttn">
+							    <a href="#">START TOUR</a>
+						</div>
+					</div>
+				  <div class="clearfix"> </div>
+				</div>
+			</div>
+			</div>
+		</div>
+		<!--Script-->
+		<script src="/static/js/myscript.js"> </script>
+`		<!--Script-->
+	</div>
+	<!--Responsive-tabs-ends-Here-->
+	<!--MOLLY-->
+<div class="molly">
+<div class="molly-mask">
+<h3>支付方式，改变生活</h3>
+<img src="/static/images/line-1.png" alt="">
+<p>随着时代的发展，如今，已经很少有现金支付。出门只带一部手机就够了，微信和支付宝成了主要的支付方式。支付方式的改进，让我们的生活更加快捷！</p>
+<div class="clearfix"> </div>
+<section id="dg-container" class="dg-container">
+   <div class="dg-wrapper">
+					<a href="#"><img src="/static/images/1.jpg" alt="image1" /></a>
+					<a href="#"><img src="/static/images/2.jpg" alt="image2" /></a>
+					<a href="#"><img src="/static/images/3.jpg" alt="image3" /></a>
+					<a href="#"><img src="/static/images/4.jpg" alt="image4" /></a>
+					<a href="#"><img src="/static/images/5.jpg" alt="image5" /></a>
+					<a href="#"><img src="/static/images/6.jpg" alt="image1" /></a>
+	</div>
+</section>
+ </div>
+ </div>
+<!--MOLLY ends-->
+	<!---start-our story----->
+		<div class="reach">
+						<div class="container">
+						  					<div class="reach-main">
+																<span class="devide-line"></span>
+																<div class="reach-left">
+																					<h4>We Reach The Top</h4>
+																					<p>september 2014</p>
+																</div>
+																<div class="reach-right">
+																	<h4>Kat is new brand</h4>
+																	<p>Lorem ipsum dolor sit amet, rebum dolore labores cu pri. Ferri iudico scripta ut eam, diceret euismod gubergren has eu, an quo tale vivendum. Ad quidam gubergren vituperatoribus sit ius etiam nemore consulatu.</p>
+																	<label><a href="#">Read More</a></label>
+																</div>
+																<div class="reach-left-snd">
+																					<h4>Close To The Stars</h4>
+																					<p>May 2014</p>
+																</div>
+																<div class="reach-right-snd">
+																	<h4>Big thing are happening</h4>
+																	<p>Lorem ipsum dolor sit amet, rebum dolore labores cu pri. Ferri iudico scripta ut eam, diceret euismod gubergren has eu, an quo tale vivendum. Ad quidam gubergren vituperatoribus sit. Ius etiam nemore consulatu ne, at meliore explicari conceptam qui. Agam ceteros forensibus.</p>
+																	<label><a href="#">Read More</a></label>
+																</div>
+																<div class="reach-left-trd">
+																					<h4>New Office</h4>
+																					<p>April 2013</p>
+																</div>
+																<div class="reach-right-trd">
+																	<h4>We are moving</h4>
+																	<p>Lorem ipsum dolor sit amet, rebum dolore labores cu pri. Ferri iudico scripta ut eam, diceret euismod gubergren has eu, an quo tale vivendum.</p>
+																	<label><a href="#">Read More</a></label>
+																</div>
+																<div class="reach-left-fvr">
+																					<h4>Ket Is Live</h4>
+																					<p>March 2012</p>
+																</div>
+																<div class="reach-right-fvr">
+																	<h4>Just started and feel so alive</h4>
+																	<p>Lorem ipsum dolor sit amet, rebum dolore labores cu pri. Ferri iudico scripta ut eam, diceret euismod gubergren has eu, an quo tale vivendum. Ad quidam gubergren vituperatoribus sit. Ius etiam nemore consulatu ne, at meliore explicari conceptam qui. Agam ceteros forensibus vix eu, paulo ubique ex eam.</p>
+																	<label><a href="#">Read More</a></label>
+																</div>
+																<div class="clearfix"> </div>
+											</div>
+						</div>
+		</div>
+		<!--Work-Starts-Here-->
+	<div class="work" id="portfolio">
+			<div class="work-top">
+				<h3>我们的产品</h3>
+			    <img src="/static/images/line-1.png" alt="">
+				<p>Eum cu tantas legere complectitur, hinc utamur ea eam. Eum patrioque mnesarchum eu, diam erant convenire et vis. Et essent evertitur sea, vis cu ubique referrentur, sed eu dicant expetendis.</p>
+			</div>
+			<ul id="filters" class="clearfix">
+						<li><span class="filter active" data-filter="app card icon logo web">ALL</span></li>
+						<li><span class="filter" data-filter="app">WEB</span></li>
+						<li><span class="filter" data-filter="card">PHOTOGRAPHY</span></li>
+						<li><span class="filter" data-filter="icon">GRAPHIC DESIGN</span></li>
+					</ul>
+					<div id="portfoliolist">
+					<div class="portfolio app mix_all" data-cat="app" style="display: inline-block; opacity: 1;">
+						<div class="portfolio-wrapper">		
+							<a  href="#small-dialog javascript:void(0)" class="b-link-stripe b-animate-go  thickbox play-icon popup-with-zoom-anim">
+						     <img src="static/{{pro_list.3.pro_img}}" /><div class="b-wrapper"><h2 class="b-animate b-from-left    b-delay03 "><img src="images/circle.png" alt=""/></h2>
+						  	</div></a>
+						  	<div class="cntnt">
+						  			<h3>AWESOME PHOTO</h3>	
+						  			<img src="/static/images/line.png" alt="">
+						  			<p>Eum cu tantas legere complectitur, hinc utamu</p>
+						  	</div>
+		                </div>
+					</div>				
+					<div class="portfolio icon mix_all" data-cat="icon" style="display: inline-block; opacity: 1;">
+						<div class="portfolio-wrapper">		
+							<a href="#small-dialog1 javascript:void(0)" class="b-link-stripe b-animate-go  thickbox play-icon popup-with-zoom-anim">
+						     <img src="static/{{pro_list.2.pro_img}}" /><div class="b-wrapper"><h2 class="b-animate b-from-left    b-delay03 "><img src="images/circle.png" alt=""/></h2>
+						  	</div></a>
+						  	<div class="cntnt">
+						  			<h3>AWESOME PHOTO</h3>	
+						  			<img src="/static/images/line.png" alt="">
+						  			<p>Eum cu tantas legere complectitur, hinc utamu</p>
+						  	</div>
+		                </div>
+					</div>		
+					<div class="portfolio app mix_all" data-cat="card" style="display: inline-block; opacity: 1;">
+						<div class="portfolio-wrapper">		
+							<a href="#small-dialog2 javascript:void(0)" class="b-link-stripe b-animate-go  thickbox play-icon popup-with-zoom-anim">
+						     <img src="static/{{pro_list.0.pro_img}}" /><div class="b-wrapper"><h2 class="b-animate b-from-left    b-delay03 "><img src="images/circle.png" alt=""/></h2>
+						  	</div></a>
+						  	<div class="cntnt">
+						  			<h3>AWESOME PHOTO</h3>	
+						  			<img src="/static/images/line.png" alt="">
+						  			<p>Eum cu tantas legere complectitur, hinc utamu</p>
+						  	</div>
+		                </div>
+					</div>				
+					<div class="portfolio card mix_all" data-cat="card" style="display: inline-block; opacity: 1;">
+						<div class="portfolio-wrapper">		
+							<a href="#small-dialog3 javascript:void(0)" class="b-link-stripe b-animate-go  thickbox play-icon popup-with-zoom-anim">
+						     <img src="static/{{pro_list.1.pro_img}}" /><div class="b-wrapper"><h2 class="b-animate b-from-left    b-delay03 "><img src="images/circle.png" alt=""/></h2>
+						  	</div></a>
+						  	<div class="cntnt">
+						  			<h3>AWESOME PHOTO</h3>	
+						  			<img src="/static/images/line.png" alt="">
+						  			<p>Eum cu tantas legere complectitur, hinc utamu</p>
+						  	</div>
+		                </div>
+					</div>	
+							
+					<div class="clearfix"> </div>	
+				</div>
+			<!--Script-for-gallery-Here-->
+				<script type="text/javascript" src="/static/js/jquery.mixitup.min.js"></script>
+					<script type="text/javascript">
+					$(function () {
+						
+						var filterList = {
+						
+							init: function () {
+							
+								// MixItUp plugin
+								// http://mixitup.io
+								$('#portfoliolist').mixitup({
+									targetSelector: '.portfolio',
+									filterSelector: '.filter',
+									effects: ['fade'],
+									easing: 'snap',
+									// call the hover effect
+									onMixEnd: filterList.hoverEffect()
+								});				
+							
+							},
+							
+							hoverEffect: function () {
+							
+								// Simple parallax effect
+								$('#portfoliolist .portfolio').hover(
+									function () {
+										$(this).find('.label').stop().animate({bottom: 0}, 200, 'easeOutQuad');
+										$(this).find('img').stop().animate({top: -30}, 500, 'easeOutQuad');				
+									},
+									function () {
+										$(this).find('.label').stop().animate({bottom: -40}, 200, 'easeInQuad');
+										$(this).find('img').stop().animate({top: 0}, 300, 'easeOutQuad');								
+									}		
+								);				
+							
+							}
+				
+						};
+						
+						// Run the show!
+						filterList.init();
+					
+						
+					});	
+					</script>
+			<!--Gallery-Script-Ends-->
+			<!--pop-up-box-->
+					  <script type="text/javascript" src="/static/js/modernizr.custom.53451.js"></script>
+					<link href="css/popuo-box.css" rel="stylesheet" type="text/css" media="all"/>
+					<script src="/static/js/jquery.magnific-popup.js" type="text/javascript"></script>
+			<!--pop-up-box-->
+			<div id="small-dialog" class="mfp-hide">
+						<!--<div class="image-top">-->
+							<!--<img src="/static/images/cycle.jpg"/>-->
+							<!--<h3>AWESOME PHOTO</h3>-->
+							<!--<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages.</p>-->
+						<!--</div>-->
+					<!--</div>-->
+					<!--<div id="small-dialog1" class="mfp-hide">-->
+						<!--<div class="image-top">-->
+							<!--<img src="/static/images/girl-1.jpg"/>-->
+							<!--<h3>AWESOME PHOTO</h3>-->
+							<!--<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages.</p>-->
+						<!--</div>-->
+					<!--</div>-->
+					<!--<div id="small-dialog2" class="mfp-hide">-->
+						<!--<div class="image-top">-->
+							<!--<img src="/static/images/lap.jpg"/>-->
+							<!--<h3>AWESOME PHOTO</h3>-->
+							<!--<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages.</p>-->
+						<!--</div>-->
+					<!--</div>-->
+					<!--<div id="small-dialog3" class="mfp-hide">-->
+						<!--<div class="image-top">-->
+							<!--<img src="/static/images/bed-1.jpg"/>-->
+							<!--<h3>AWESOME PHOTO</h3>-->
+							<!--<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages.</p>-->
+						<!--</div>-->
+					<!--</div>-->
+			<!--<script>-->
+						<!--$(document).ready(function() {-->
+						<!--$('.popup-with-zoom-anim').magnificPopup({-->
+							<!--type: 'inline',-->
+							<!--fixedContentPos: false,-->
+							<!--fixedBgPos: true,-->
+							<!--overflowY: 'auto',-->
+							<!--closeBtnInside: true,-->
+							<!--preloader: false,-->
+							<!--midClick: true,-->
+							<!--removalDelay: 300,-->
+							<!--mainClass: 'my-mfp-zoom-in'-->
+						<!--});-->
+																						<!---->
+						<!--});-->
+				<!--</script>		-->
+	</div>
+	<!--Work-Ends-Here-->
+	<!--video-start-->
+			<!--<div class="video">-->
+				<!--<div class="vdo">-->
+				<!--&lt;!&ndash;<div class="container">&ndash;&gt;-->
+				<!--&lt;!&ndash;&lt;!&ndash;beanner-info&ndash;&gt;&ndash;&gt;-->
+				<!--&lt;!&ndash;<div class="banner-info text-center wow fadeIn" data-wow-delay="0.5s">&ndash;&gt;-->
+					<!--&lt;!&ndash;<h3>Nothing say better,then a video</h3>&ndash;&gt;-->
+					<!--&lt;!&ndash;<img src="/static/images/line-1.png" alt="">&ndash;&gt;-->
+					<!--&lt;!&ndash;<p>Eum cu tantas legere complectitur, hinc utamur ea eam. Eum patrioque mnesarchum eu, diam erant convenire et vis. Et essent evertitur sea, vis cu ubique referrentur, sed eu dicant expetendis.</p>&ndash;&gt;-->
+					<!--&lt;!&ndash;<h4>See Video</h4>&ndash;&gt;-->
+					<!--&lt;!&ndash;<a class="play-icon popup-with-zoom-anim" href="#small-dialog5"><span> </span></a><br />&ndash;&gt;-->
+				<!--&lt;!&ndash;</div>&ndash;&gt;-->
+				<!--&lt;!&ndash;&lt;!&ndash;beanner-info&ndash;&gt;&ndash;&gt;-->
+				<!--&lt;!&ndash;&lt;!&ndash;video&ndash;&gt;&ndash;&gt;-->
+				<!--&lt;!&ndash;<div id="small-dialog5" class="mfp-hide">&ndash;&gt;-->
+					<!--&lt;!&ndash;<iframe src="/static/player.vimeo.com/video/38584262"  frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>&ndash;&gt;-->
+				<!--&lt;!&ndash;</div>&ndash;&gt;-->
+				 <!--&lt;!&ndash;<script>&ndash;&gt;-->
+						<!--&lt;!&ndash;$(document).ready(function() {&ndash;&gt;-->
+						<!--&lt;!&ndash;$('.popup-with-zoom-anim').magnificPopup({&ndash;&gt;-->
+							<!--&lt;!&ndash;type: 'inline',&ndash;&gt;-->
+							<!--&lt;!&ndash;fixedContentPos: false,&ndash;&gt;-->
+							<!--&lt;!&ndash;fixedBgPos: true,&ndash;&gt;-->
+							<!--&lt;!&ndash;overflowY: 'auto',&ndash;&gt;-->
+							<!--&lt;!&ndash;closeBtnInside: true,&ndash;&gt;-->
+							<!--&lt;!&ndash;preloader: false,&ndash;&gt;-->
+							<!--&lt;!&ndash;midClick: true,&ndash;&gt;-->
+							<!--&lt;!&ndash;removalDelay: 300,&ndash;&gt;-->
+							<!--&lt;!&ndash;mainClass: 'my-mfp-zoom-in'&ndash;&gt;-->
+						<!--&lt;!&ndash;});&ndash;&gt;-->
+																						<!--&lt;!&ndash;&ndash;&gt;-->
+						<!--&lt;!&ndash;});&ndash;&gt;-->
+				<!--&lt;!&ndash;</script>								  &ndash;&gt;-->
+				<!--&lt;!&ndash;</div>&ndash;&gt;-->
+			<!--&lt;!&ndash;fea-video&ndash;&gt;-->
+			<!--</div>-->
+			<!--</div>-->
+			<!--video-ends-->
+			<div class="tlinks">Collect from <a href="http://www.cssmoban.com/"  title="网站模板">网站模板</a></div>
+	<!--number-start-->
+	  <div class="numbers">
+	  		<div class="container">
+	  				    <div class="number-head">
+	  							<div class="col-md-3">
+	  										<div class="number-head-one">
+	  												    <span class="one"> </span>
+	  												    <h3>3054</h3>
+	  												    <p>COMPLETED PROJECTS</p>
+	  										</div>
+	  							</div>
+	  							<div class="col-md-3">
+	  										<div class="number-head-one">
+	  												    <span class="two"> </span>
+	  												    <h3>7234873</h3>
+	  												    <p>CLICK PRESED</p>
+	  										</div>
+	  							</div>
+	  							<div class="col-md-3">
+	  										<div class="number-head-one">
+	  												    <span class="tre"> </span>
+	  													<h3>4670</h3>
+	  													<p>MAILS SENTED & RECIVED</p>
+	  										 </div>
+	  							</div>
+	  							<div class="col-md-3">
+	  									    <div class="number-head-one">
+	  													<span class="fvr"> </span>
+	  													<h3>939</h3>
+	  													<p>JOKES TOLDS</p>
+	  										</div>
+	  							</div>
+	  							<div class="clearfix"> </div>
+	  					</div>
+	  		</div>
+	  </div>
+	  <!--number-ends-->
+	  <!--one-starts-->
+	  <!--<div class="one-main">-->
+	  			<!--<div class="container">-->
+	  						<!--<div class="one-head">-->
+	  									<!--<h3>We are the one</h3>-->
+	  									<!--<img src="/static/images/line-1.png" alt="">-->
+	  									<!--<p>Eum cu tantas legere complectitur, hinc utamur ea eam. Eum patrioque mnesarchum eu, diam erant convenire et vis. Et essent evertitur sea, vis cu ubique referrentur, sed eu dicant expetendis.</p>-->
+	  						<!--</div>-->
+	  						<!--<div class="one-bottom">-->
+	  									<!--<div class="col-md-3">-->
+	  												<!--<div class="one-bottom-one">-->
+	  															<!--<img src="/static/images/g-1.png" alt="">-->
+	  														    <!--<div class="one-mask">-->
+	  														    		<!--<h3>John Doe</h3>-->
+	  														    		<!--<p class="para">Graphic Designer</p>-->
+	  														    <!--</div>-->
+	  															<!--<p class="pr">Eum cu tantas legere complectitur, hinc utamur ea eam. Eum patrioque mnesarchum eu.</p>-->
+	  															<!--<ul>-->
+	  																<!--<li><a class="active" href="#"><span class="bottom-one"> </span></a></li>-->
+	  																<!--<li><a class="active" href="#"><span class="bottom-two"> </span></a></li>-->
+	  																<!--<li><a class="active" href="#"><span class="bottom-tre"> </span></a></li>-->
+	  																<!--<li><a class="active" href="#"><span class="bottom-fvr"> </span></a></li>-->
+	  															<!--</ul>-->
+	  												<!--</div>-->
+	  									<!--</div>-->
+	  									<!--<div class="col-md-3">-->
+	  												<!--<div class="one-bottom-one">-->
+	  															<!--<img src="/static/images/g-2.png" alt="">-->
+	  															<!--<div class="one-mask">-->
+	  														    		<!--<h3>John Doe</h3>-->
+	  														    		<!--<p class="para">Graphic Designer</p>-->
+	  														    <!--</div>-->
+	  															<!--<p class="pr">Eum cu tantas legere complectitur, hinc utamur ea eam. Eum patrioque mnesarchum eu.</p>-->
+	  															<!--<ul>-->
+	  																<!--<li><a href="#"><span class="bottom-one"> </span></a></li>-->
+	  																<!--<li><a href="#"><span class="bottom-two"> </span></a></li>-->
+	  																<!--<li><a href="#"><span class="bottom-tre"> </span></a></li>-->
+	  																<!--<li><a href="#"><span class="bottom-fvr"> </span></a></li>-->
+	  															<!--</ul>-->
+	  												<!--</div>-->
+	  									<!--</div>-->
+	  									<!--<div class="col-md-3">-->
+	  												<!--<div class="one-bottom-one">-->
+	  															<!--<img src="/static/images/g-3.png" alt="">-->
+	  															<!--<div class="one-mask">-->
+	  														    		<!--<h3>John Doe</h3>-->
+	  														    		<!--<p class="para">Graphic Designer</p>-->
+	  														    <!--</div>-->
+	  															<!--<p class="pr">Eum cu tantas legere complectitur, hinc utamur ea eam. Eum patrioque mnesarchum eu.</p>-->
+	  															<!--<ul>-->
+	  																<!--<li><a href="#"><span class="bottom-one"> </span></a></li>-->
+	  																<!--<li><a href="#"><span class="bottom-two"> </span></a></li>-->
+	  																<!--<li><a href="#"><span class="bottom-tre"> </span></a></li>-->
+	  																<!--<li><a href="#"><span class="bottom-fvr"> </span></a></li>-->
+	  															<!--</ul>-->
+	  												<!--</div>-->
+	  									<!--</div>-->
+	  									<!--<div class="col-md-3">-->
+	  												<!--<div class="one-bottom-one">-->
+	  															<!--<img src="/static/images/g-4.png" alt="">-->
+	  															<!--<div class="one-mask">-->
+	  														    		<!--<h3>John Doe</h3>-->
+	  														    		<!--<p class="para">Graphic Designer</p>-->
+	  														    <!--</div>-->
+	  															<!--<p class="pr">Eum cu tantas legere complectitur, hinc utamur ea eam. Eum patrioque mnesarchum eu.</p>-->
+	  															<!--<ul>-->
+	  																<!--<li><a href="#"><span class="bottom-one"> </span></a></li>-->
+	  																<!--<li><a href="#"><span class="bottom-two"> </span></a></li>-->
+	  																<!--<li><a href="#"><span class="bottom-tre"> </span></a></li>-->
+	  																<!--<li><a href="#"><span class="bottom-fvr"> </span></a></li>-->
+	  															<!--</ul>-->
+	  												<!--</div>-->
+	  									<!--</div>-->
+	  									<!--<div class="clearfix"> </div>-->
+	  						<!--</div>-->
+	  			<!--</div>-->
+	  <!--</div>-->
+	  <!--one-ends-->
+	  <!--about-startS-->
+	  <div class="about" id="about">
+	  				<div class="container">
+	  								<div class="about-main">
+	  											<div class="col-md-6">
+	  														<div class="about-left">
+	  																	<a href="#"><img src="/static/images/hezi.jpeg" alt=""></a>
+	  														</div>
+	  											</div>
+	  											<div class="col-md-6">
+	  														<div class="about-right">
+	  														     <h3>移动支付盒子</h3>
+	  														     <p class="p1">盒子支付创造性地将刷卡器与智能手机等移动设备相结合，开创了移动POS支付的新方式，在产品创新、产品品质、迭代速度、知识产权和检测认证方面达到国内先进水平。</p>
+	  														     <p class="p2">自创立起广泛服务于国内商户，为中小微商户提供智能收款服务实现业务的快速增长；同时为行业类客户定制专业化移动支付智能解决方案，加速客户资金运转效率提升信息化管理和客户关系管理水平；致力于构建符合国家产业发展政策和法规的新型、便捷、安全于一体的专业化，国际化的移动金融创新支付服务提供商。</p>
+	  														</div>
+	  											</div>
+	  											<div class="clearfix"> </div>
+	  								</div>
+	  				</div>
+	  </div>
+	  <!--about-ends-->
+	  <!--Slider-Starts-Here-->
+	<div class="slider">
+		<div class="slide-mask">
+		<div class="container">
+			<div class="slider-content">
+				<script src="/static/js/responsiveslides.min.js"></script>
+			 <script>
+			    // You can also use "$(window).load(function() {"
+			    $(function () {
+			      // Slideshow 4
+			      $("#slider4").responsiveSlides({
+			        auto: true,
+			        pager: true,
+			        nav: true,
+			        speed: 500,
+			        namespace: "callbacks",
+			        before: function () {
+			          $('.events').append("<li>before event fired.</li>");
+			        },
+			        after: function () {
+			          $('.events').append("<li>after event fired.</li>");
+			        }
+			      });
+			
+			    });
+			  </script>
+			<!--End-slider-script-->
+			<!--Slideshow-4-->
+			    <div  id="top" class="callbacks_container">
+			      <ul class="rslides" id="slider4">
+			        <li>
+			          <div class="slider-top">
+			          	<img src="/static/images/coats.png" alt=""/>
+			          	<h3>唯美食与美人不可辜负</h3>
+			          	<p class="below">哲士沃兹基朔德</p>
+			          </div>
+			        </li>
+			        <li>
+			          <div class="slider-top">
+			          <img src="/static/images/coats.png" alt=""/>
+			          	<h3>快捷支付，方便生活</h3>
+			          	<p class="below">More Faster</p>
+			          </div>
+			        </li>
+			        <li>
+			          <div class="slider-top">
+			          	<img src="/static/images/coats.png" alt=""/>
+			          	<h3>更好的点餐系统，让美食更美好</h3>
+			          	<p class="below">Good Good Food</p>
+			          </div>
+			        </li>
+			      </ul>
+			    </div>
+			    <div class="clearfix"> </div>
+	  			<!--banner-Slider-Ends-Here--> 
+			</div>
+			</div>
+			</div>
+		</div>
+	<!--Slider-Ends-Here-->
+	<!--news-starts-Here-->
+		<div class="news" id="news">
+				<div class="container">
+						<div class="news-main">
+								<div class="news-top">
+										<h3>最新新闻</h3>
+										<img src="/static/images/line-1.png" alt="">
+										<p>Eum cu tantas legere complectitur, hinc utamur ea eam. Eum patrioque mnesarchum eu, diam erant convenire et vis. Et essent evertitur sea, vis cu ubique referrentur, sed eu dicant expetendis.</p>
+								</div>
+								{% for new in new_list %}
+								<div class="news-bottom-one">
+										<div class="col-md-3">
+												<div class="news-bottom-left">
+														<h3>{{new.date_time|date:"d"}}</h3>
+														<p>{{new.date_time|date:"F"}}</p>
+												</div>
+										</div>
+										<div class="col-md-9">
+												<div class="news-bottom-right">
+														<p>{{new.new_content}}</p>
+														<div class="bn">
+															<a href="#">Read More</a>
+														</div>
+												</div>
+										</div>
+										<div class="clearfix"> </div>
+								</div>
+								{% endfor %}
+
+				</div>
+		</div>
+	<!--news-Ends-Here-->
+	<!--m-design-starts-Here-->
+		<!--<div class="m-design">-->
+			<!--<div class="m-design-mask">-->
+				<!--&lt;!&ndash;<div class="container">&ndash;&gt;-->
+						<!--&lt;!&ndash;<div class="m-design-main">&ndash;&gt;-->
+								<!--&lt;!&ndash;<div class="col-md-5">&ndash;&gt;-->
+										<!--&lt;!&ndash;<div class="m-design-left">&ndash;&gt;-->
+												<!--&lt;!&ndash;<img src="/static/images/system-1.png">&ndash;&gt;-->
+										<!--&lt;!&ndash;</div>&ndash;&gt;-->
+								<!--&lt;!&ndash;</div>&ndash;&gt;-->
+								<!--&lt;!&ndash;<div class="col-md-7">&ndash;&gt;-->
+										<!--&lt;!&ndash;<div class="m-design-right">&ndash;&gt;-->
+												<!--&lt;!&ndash;<h3>MODERN DESIGN</h3>&ndash;&gt;-->
+												<!--&lt;!&ndash;<img src="/static/images/line.png" alt="">&ndash;&gt;-->
+												<!--&lt;!&ndash;<p class="p1">Eum cu tantas legere complectitur, hinc utamur ea eam. Eum patrioque mnesarchum eu, diam erant convenire et vis. Et essent evertitur sea, vis cu ubique referrentur, sed eu dicant expetendis.Eum cu tantas legere complectitur, hinc utamur ea eam.</p>&ndash;&gt;-->
+												<!--&lt;!&ndash;<p class="p2">Ynesarchum eu, diam erant convenire et vis. Et essent evertitur sea, vis cu ubique referrentur, sed eu dicant expetendis.</p>&ndash;&gt;-->
+										<!--&lt;!&ndash;</div>&ndash;&gt;-->
+								<!--&lt;!&ndash;</div>&ndash;&gt;-->
+								<!--&lt;!&ndash;<div class="clearfix"> </div>&ndash;&gt;-->
+						<!--&lt;!&ndash;</div>&ndash;&gt;-->
+				<!--&lt;!&ndash;</div>&ndash;&gt;-->
+			<!--</div>-->
+		<!--</div>-->
+	<!--m-design-Ends-Here-->
+	<!--clients-starts-Here-->
+	<!--<div class="clients">-->
+		<!--<div class="container">-->
+			<!--<div class="clients-head">-->
+				<!--<h3>What clients say</h3>-->
+				<!--<img src="/static/images/line-1.png" alt="">-->
+				<!--<p>Eum cu tantas legere complectitur, hinc utamur ea eam. Eum patrioque mnesarchum eu, diam erant convenire et vis. Et essent evertitur sea, vis cu ubique referrentur, sed eu dicant expetendis.</p>-->
+			<!--</div>-->
+			<!--<div class="clients-bottom">-->
+				<!--<div class="col-md-4">-->
+					<!--<div class="clients-bottom-left">-->
+						<!--<h4>Anay Stoen</h4>-->
+						<!--<p class="pg1">Graphic Designer</p>-->
+						<!--<p class="pg2">Eum cu tantas legere complectitur, hinc utamur ea eam. Eum patrioque mnesarchum eu, diam erant convenire et vis. Et essent evertitur sea.</p>-->
+					<!--</div>-->
+				<!--</div>-->
+				<!--<div class="col-md-4">-->
+					<!--<div class="clients-bottom-left">-->
+						<!--<h4>Anay Stoen</h4>-->
+						<!--<p class="pg1">Graphic Designer</p>-->
+						<!--<p class="pg2">Eum cu tantas legere complectitur, hinc utamur ea eam. Eum patrioque mnesarchum eu, diam erant convenire et vis. Et essent evertitur sea.</p>-->
+					<!--</div>-->
+				<!--</div>-->
+				<!--<div class="col-md-4">-->
+					<!--<div class="clients-bottom-left">-->
+						<!--<h4>Anay Stoen</h4>-->
+						<!--<p class="pg1">Graphic Designer</p>-->
+						<!--<p class="pg2">Eum cu tantas legere complectitur, hinc utamur ea eam. Eum patrioque mnesarchum eu, diam erant convenire et vis. Et essent evertitur sea.</p>-->
+					<!--</div>-->
+				<!--</div>-->
+				<!--<div class="clearfix"> </div>-->
+			<!--</div>-->
+		<!--</div>-->
+	<!--</div>-->
+	<!--clients-Ends-Here-->
+	<!--newsletter-starts-Here-->
+	<div class="newsletter">
+		<div class="newsletter-mask">
+		<div class="container">
+			<div class="newsletter-head">
+				<h3>Want to hear more story,subscribe for our newsletter</h3>
+				<div class="n-bn">
+					<a href="#contact">subbscribe</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
+	<!--newsletter-Ends-Here-->
+	<!--contact-starts-Here-->
+	<div class="contact" id="contact">
+		<div class="container">
+			<div class="contact-head">
+				<h3>联系我们</h3>
+				<img src="/static/images/line-1.png" alt="">
+				<p>Eum cu tantas legere complectitur, hinc utamur ea eam. Eum patrioque mnesarchum eu, diam erant convenire et vis. Et essent evertitur sea, vis cu ubique referrentur, sed eu dicant expetendis.</p>
+			</div>
+			<div class="contact-bottom">
+				<form>
+			         <input type="text" class="text" value="您的姓名" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '您的姓名';}">
+			         <input type="text" class="text" value="您的联系方式" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '您的联系方式';}">
+			     	 <textarea value="您的通讯方式" onfocus="if(this.value == '您的通讯方式') this.value='';" onblur="if(this.value == '') {this.value='您的通讯方式';}">您的通讯方式</textarea><br>
+			     	 <div class="submit">
+			     	 	<input type="submit" value="发送信息给我们">
+			     	 </div>                    
+            	</form>
+			</div>
+		</div>
+	</div>
+	<!--contact-Ends-Here-->
+	<!--map-starts-Here-->
+	<!--<div class="map">-->
+		<!--<iframe src="http://developer.baidu.com/map/jsdemo/demo/a1_1.htm" width="600" height="450" frameborder="0" style="border:0"></iframe>-->
+		<!--<div class="map-mask">-->
+		<!--<div class="container">-->
+			<!--<div class="map-main">-->
+				  <!--<h5>Awesome Address 432</h5>-->
+				  <!--<p><a href="mailto:example@gmail.com">ourmail@sometype.com</a></p>-->
+				  <!--<label>+321(0)32 123 343 492</label>-->
+			<!--</div>-->
+		<!--</div>-->
+		<!--</div>-->
+	<!--</div>-->
+	<!--map-Ends-Here-->
+	<!--footer-starts-Here-->
+	<div class="footer">
+		<div class="container">
+			<div class="footer-head">
+				<p>Copyright &copy; 2014.Company name All rights reserved.More Templates <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a> - Collect from <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a></p>
+			</div>
+		</div>
+		<script type="text/javascript">
+									$(document).ready(function() {
+										/*
+										var defaults = {
+								  			containerID: 'toTop', // fading element id
+											containerHoverID: 'toTopHover', // fading element hover id
+											scrollSpeed: 1200,
+											easingType: 'linear' 
+								 		};
+										*/
+										
+										$().UItoTop({ easingType: 'easeOutQuart' });
+										
+									});
+								</script>
+					<a href="#home" id="toTop" class="scroll" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+	</div>
+	<!--footer-Ends-Here-->
+
+</body>
+</html>
