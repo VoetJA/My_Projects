@@ -13,10 +13,12 @@
 <script src="/static/js/jquery.min.js"></script>
 		<script type="text/javascript">
 			jQuery(document).ready(function($) {
+
 				$(".scroll").click(function(event){		
 					event.preventDefault();
 					$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
 				});
+
 			});
 		</script>
 <!---- start-smoth-scrolling---->
@@ -128,11 +130,11 @@
 			<div class="tab-grids">
 				<div id="tab1" class="tab-grid">
 					<div class="col-md-6 line1">
-						<img src="/static/images/phone1.png" alt="">
+						<img src="static/{{pro_list.0.pro_img}}" alt="">
 					    </div>
 					 <div class="col-md-6 line2">   
-						<h3>Fully Responsive</h3>
-						<p class="para1">Eum cu tantas legere complectitur, hinc utamur ea eam. Lorem ipsum dolor sit amet, volumus temporibus definitionem id ius, vel ut magna timeam appareat, movet timeam maiorum an ius.</p>
+						<h3>{{pro_list.0.pro_name}}</h3>
+						<p class="para1">&emsp;&emsp;{{pro_list.0.pro_txt}}</p>
 						<p class="para2">Sea libris dictas lucilius et. Ne cibo urbanitas pri, qui ad populo accusamus. Quod congue ea ius, nisl aperiri sit ut.</p>
 						<div class="bttn">
 							    <a href="#">START TOUR</a>
@@ -142,11 +144,11 @@
 				</div>
 				<div id="tab2" class="tab-grid">
 					<div class="col-md-6 line1">
-						<img src="/static/images/iphone1.png" alt="">
+						<img src="static/{{pro_list.1.pro_img}}" alt="">
 					    </div>
 					 <div class="col-md-6 line2">   
-						<h3>Fully Responsive</h3>
-						<p class="para1">Eum cu tantas legere complectitur, hinc utamur ea eam. Lorem ipsum dolor sit amet, volumus temporibus definitionem id ius, vel ut magna timeam appareat, movet timeam maiorum an ius.</p>
+						<h3>{{pro_list.1.pro_name}}</h3>
+						<p class="para1">&emsp;&emsp;{{pro_list.1.pro_txt}}</p>
 						<p class="para2">Sea libris dictas lucilius et. Ne cibo urbanitas pri, qui ad populo accusamus. Quod congue ea ius, nisl aperiri sit ut.</p>
 						<div class="bttn">
 							    <a href="#">START TOUR</a>
@@ -632,7 +634,7 @@
 								<div class="news-top">
 										<h3>最新新闻</h3>
 										<img src="/static/images/line-1.png" alt="">
-										<p>Eum cu tantas legere complectitur, hinc utamur ea eam. Eum patrioque mnesarchum eu, diam erant convenire et vis. Et essent evertitur sea, vis cu ubique referrentur, sed eu dicant expetendis.</p>
+										<p>一起来看看围绕我们的产品发生的故事吧～</p>
 								</div>
 								{% for new in new_list %}
 								<div class="news-bottom-one">
@@ -721,9 +723,9 @@
 		<div class="newsletter-mask">
 		<div class="container">
 			<div class="newsletter-head">
-				<h3>Want to hear more story,subscribe for our newsletter</h3>
+				<h3>想要了解更多关于产品，请点击下方按钮提交您的信息，我们会尽快联系您！</h3>
 				<div class="n-bn">
-					<a href="#contact">subbscribe</a>
+					<a href="#contact">去提交信息</a>
 				</div>
 			</div>
 		</div>
@@ -739,17 +741,43 @@
 				<p>Eum cu tantas legere complectitur, hinc utamur ea eam. Eum patrioque mnesarchum eu, diam erant convenire et vis. Et essent evertitur sea, vis cu ubique referrentur, sed eu dicant expetendis.</p>
 			</div>
 			<div class="contact-bottom">
-				<form>
-			         <input type="text" class="text" value="您的姓名" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '您的姓名';}">
-			         <input type="text" class="text" value="您的联系方式" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '您的联系方式';}">
-			     	 <textarea value="您的通讯方式" onfocus="if(this.value == '您的通讯方式') this.value='';" onblur="if(this.value == '') {this.value='您的通讯方式';}">您的通讯方式</textarea><br>
+				<form >
+                    {% csrf_token %}
+			         <input type="text" class="text" id="cus_name" value="您的姓名" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '您的姓名';}">
+			         <input type="text" class="text" id="cus_phone" value="您的联系方式" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '您的联系方式';}">
+			     	 <textarea value="您的通讯方式" id="cus_address" onfocus="if(this.value == '您的通讯方式') this.value='';" onblur="if(this.value == '') {this.value='您的通讯方式';}">您的通讯方式</textarea><br>
 			     	 <div class="submit">
-			     	 	<input type="submit" value="发送信息给我们">
+			     	 	<input type="submit" id="msg" value="发送信息给我们">
 			     	 </div>                    
             	</form>
 			</div>
 		</div>
 	</div>
+            <script>
+                $('#msg').click(function(){
+
+				    var cus_name = $('#cus_name').val()
+				    var cus_phone = $('#cus_phone').val()
+				    var cus_address = $('#cus_address').val()
+                    //ajax请求加入下面可以解决CSRF
+                    $.ajaxSetup({
+                        data:{csrfmiddlewaretoken:'{{ csrf_token }}'}
+                    });
+				    $.ajax({
+                        type:'POST',
+                        url:'sub_msg/',
+                        data:{'cus_name':cus_name,'cus_phone':cus_phone,cus_address:cus_address},
+
+                        success:function(res){
+                            alert(res)
+                        },
+                        error:function(){
+                            alert('no')
+                        }
+				    });
+				});
+            </script>
+            <!--{% url 'main:sub_msg' %}-->
 	<!--contact-Ends-Here-->
 	<!--map-starts-Here-->
 	<!--<div class="map">-->
