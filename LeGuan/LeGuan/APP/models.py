@@ -10,7 +10,7 @@ class NewsList(models.Model):
     new_content = models.TextField(verbose_name='新闻内容')
 
     class Meta:
-        verbose_name_plural = '新闻'
+        verbose_name_plural = '最新新闻'
     def __str__(self):
         return self.new_content.encode('utf-8')
 
@@ -20,6 +20,8 @@ class ProList(models.Model):
     pro_name = models.CharField(max_length=30,verbose_name='产品名称')
     #产品图片
     pro_img = models.ImageField(upload_to='ProIMg/',verbose_name='产品图片')
+    #产品介绍
+    pro_txt = models.TextField()
     def __str__(self):
         return self.pro_name.encode('utf-8')
     class Meta:
